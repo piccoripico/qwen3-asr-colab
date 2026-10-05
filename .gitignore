@@ -1,0 +1,36 @@
+# Local media and generated outputs
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.opus
+*.aac
+*.wma
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.avi
+*.m4v
+*.srt
+*.xlsx
+*.zip
+
+# Runtime folders
+qwen3_asr_uploads/
+qwen3_asr_work/
+qwen3_asr_outputs/
+outputs*/
+
+# Python/cache
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments
+.venv/
+venv/
+.env
+.env.*

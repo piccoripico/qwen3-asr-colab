@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  notebooks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build localized README files
+        run: python scripts/build_readmes.py
+      - name: Build localized notebooks
+        run: python scripts/build_notebooks.py
+      - name: Check generated artifacts
+        run: python scripts/check_notebooks.py
+      - name: Ensure generated files are committed
+        run: git diff --exit-code -- README.md docs/README notebooks
